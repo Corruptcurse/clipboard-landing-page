@@ -1,0 +1,227 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
+
+ol, ul {
+  list-style: none; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 18px; }
+
+main {
+  display: grid;
+  align-items: center;
+  justify-content: center; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #4c545d; }
+
+p {
+  color: #9fabb2;
+  max-width: 700px;
+  text-align: center;
+  line-height: 1.4; }
+
+.top-section {
+  background-image: url(images/bg-header-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center; }
+  .top-section h1 {
+    font-weight: 600;
+    font-size: 2.8rem; }
+  .top-section img {
+    margin: 20px; }
+
+.button-container {
+  margin: 50px auto 100px; }
+
+.button {
+  display: inline-block;
+  box-shadow: 1px 0px 2px 1px;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 1rem;
+  padding: 12px 65px;
+  text-decoration: none;
+  text-shadow: 0px 0px 0px #2f6627; }
+
+.button-ios {
+  background: #26baa4; }
+  .button-ios:hover {
+    background: #2bd4ba; }
+
+.button-mac {
+  background: #6173ff; }
+  .button-mac:hover {
+    background: #7081ff; }
+
+.primary-features {
+  margin: 5% auto 10%; }
+
+.primary-features-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center; }
+  .primary-features-grid .primary-text {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 0 2rem 0 10%;
+    margin: 10% 0 10% 0; }
+    .primary-features-grid .primary-text p {
+      margin-bottom: 60px;
+      width: 60%;
+      text-align: left; }
+  .primary-features-grid .primary-image {
+    display: flex; }
+    .primary-features-grid .primary-image img {
+      width: 100%; }
+
+.mobile-features {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center; }
+  .mobile-features img {
+    padding: 5%; }
+
+.workflow-section {
+  text-align: center;
+  max-width: 85vw;
+  margin: 5% auto 10%; }
+  .workflow-section ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: stretch; }
+    .workflow-section ul li {
+      width: 25%;
+      margin-left: 20px; }
+
+.companies-section {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center; }
+
+.cta-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10% auto 5%; }
+
+.footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fcfdfd;
+  max-width: 70vw;
+  height: auto;
+  width: 100%;
+  margin: 0 auto 5%; }
+  .footer .logo {
+    width: 75px;
+    margin-left: 5%; }
+  .footer ul {
+    column-count: 3;
+    width: 50%; }
+    .footer ul li {
+      margin: 0 5% 5%; }
+      .footer ul li:hover {
+        color: #7081ff;
+        cursor: pointer; }
+  .footer .icons {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 10rem; }
+    .footer .icons a {
+      text-decoration: none; }
+      .footer .icons a i {
+        font-size: 1.5rem;
+        color: #687982; }
+        .footer .icons a i:hover {
+          text-decoration: none;
+          cursor: pointer;
+          color: #26baa4; }
+
+@media only screen and (max-width: 768px) {
+  p {
+    text-align: center; }
+
+  .top-section {
+    background-image: url(images/bg-header-mobile.png); }
+    .top-section h1 {
+      text-align: center; }
+
+  .button {
+    display: block; }
+
+  .button-ios {
+    margin: 10% auto; }
+
+  .primary-features-grid {
+    display: block; }
+    .primary-features-grid .primary-text {
+      align-items: center; }
+      .primary-features-grid .primary-text p {
+        text-align: center; }
+
+  .workflow-section ul {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; }
+    .workflow-section ul li {
+      margin: 10% auto; }
+
+  .companies-section {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 75vh; }
+    .companies-section:nth-child(5) {
+      margin-bottom: 75px; }
+
+  .footer {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 75vh; }
+    .footer .logo {
+      margin: 0; }
+    .footer ul {
+      column-count: 1;
+      text-align: center; }
+      .footer ul li {
+        margin: 2rem auto; } }
+
+/*# sourceMappingURL=styles.css.map */

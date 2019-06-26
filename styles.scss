@@ -1,0 +1,250 @@
+@import 'reset';
+@mixin flex ($direction, $align, $justify) {
+  display: flex;
+  flex-flow: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$fontFamily: 'Bai Jamjuree', sans-serif;
+
+body {
+  font-family: $fontFamily;
+  font-size: 18px;
+}
+
+main {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: hsl(210, 10%, 33%);
+}
+
+p {
+  color: hsl(201, 11%, 66%);
+  max-width: 700px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+// Top Section
+
+.top-section {
+  background-image: url(images/bg-header-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include flex(column, center, center);
+  h1 {
+    font-weight: 600;
+    font-size: 2.8rem;
+  }
+  img {
+    margin: 20px;
+  }
+}
+
+.button-container {
+  margin: 50px auto 100px;
+}
+.button {
+  display: inline-block;
+	box-shadow: 1px 0px 2px 1px;
+	border-radius: 28px;
+	border: 1px solid #18ab29;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: $fontFamily;
+	font-size: 1rem;
+	padding: 12px 65px;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px #2f6627;
+}
+
+.button-ios {
+  background: hsl(171, 66%, 44%);
+  &:hover {
+    background: hsl(171, 66%, 50%);
+  }
+}
+
+.button-mac {
+  background: hsl(233, 100%, 69%);
+  &:hover {
+    background: hsl(233, 100%, 72%);
+  }
+}
+
+// Primary Features
+
+.primary-features {
+  margin: 5% auto 10%;
+}
+
+.primary-features-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  .primary-text {
+    @include flex(column, baseline, flex-start);
+    padding: 0 2rem 0 10%;
+    margin: 10% 0 10% 0;
+    p {
+      margin-bottom: 60px;
+      width: 60%;
+      text-align: left;
+    }
+  }
+  .primary-image {
+    display: flex;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// Mobile Features Section
+
+.mobile-features {
+  @include flex(column, center, center);
+  img {
+    padding: 5%;
+  }
+}
+
+// Workflow Section
+
+.workflow-section {
+  text-align: center;
+  max-width: 85vw;
+  margin: 5% auto 10%;
+  ul {
+    @include flex(row, stretch, center);
+    li {
+      width: 25%;
+      margin-left: 20px;
+    }
+  }
+}
+
+// Companies section
+
+.companies-section {
+  @include flex(row, center, space-evenly);
+}
+
+// CTA section
+.cta-section {
+  @include flex(column, center, center);
+  margin: 10% auto 5%;
+}
+
+// Footer Section
+
+.footer {
+  @include flex (row, center, space-between);
+  background: hsl(201, 11%, 99%);
+  max-width: 70vw;
+  height: auto;
+  width: 100%;
+  margin: 0 auto 5%;
+  .logo {
+    width: 75px;
+    margin-left: 5%;
+  }
+  ul {
+    column-count: 3;
+    width: 50%;
+    li {
+      margin: 0 5% 5%;
+      &:hover {
+        color: hsl(233, 100%, 72%);
+        cursor: pointer;
+      }
+    }
+  }
+  .icons {
+    @include flex(row, center, space-around);
+    width: 10rem;
+    a {
+      text-decoration: none;
+      i {
+        font-size: 1.5rem;
+        color: hsl(201, 11%, 46%);
+        &:hover {
+          text-decoration: none;
+          cursor: pointer;
+          color: hsl(171, 66%, 44%);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  p {
+    text-align: center;
+  }
+
+  .top-section {
+    background-image: url(images/bg-header-mobile.png);
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .button {
+    display: block;
+  }
+
+  .button-ios {
+    margin: 10% auto;
+  }
+
+  .primary-features-grid {
+    display: block;
+    .primary-text {
+      align-items: center;
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  .workflow-section {
+    ul {
+      @include flex(column, center, center);
+      li {
+        margin: 10% auto;
+      }
+    }
+  }
+
+  .companies-section {
+    @include flex(column, center, space-between);
+    &:nth-child(5) {
+      margin-bottom: 75px;
+    }
+    height: 75vh;
+  }
+
+  .footer {
+    @include flex (column, center, space-evenly);
+    height: 75vh;
+    .logo {
+      margin: 0;
+    }
+    ul {
+      column-count: 1;
+      text-align: center;
+      li {
+        margin: 2rem auto;
+      }
+    }
+  }
+}
